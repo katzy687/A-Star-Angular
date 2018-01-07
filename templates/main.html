@@ -2,10 +2,13 @@
          layout="row" 
          layout-align="space-between center" 
          ng-controller="TileCtrl as tileCtrl">
-
-  <div class="instructions" style="position: absolute; top: 2%; left: 50%; transform: translateX(-50%)">
-    <p>1. Click Start/End to set path starting/ending points respectively </p>
-    <p>2. Click on grid with no buttons selected to set walls</p>
+         
+  <h1 style="text-align: center; color: #03A9F4; position: absolute; top: 2%; left: 50%; transform: translateX(-50%)">
+    A-Star-Angular
+  </h1>
+  <div class="instructions" style="position: absolute; top: 22px; left: 22px">
+    <p>1. Click Start/End to set path points </p>
+    <p>2. Click on grid in neutral to set walls</p>
     <p>3. Hit Go!</p>
   </div>
   
@@ -13,7 +16,9 @@
   <md-sidenav layout="column" 
               class="md-sidenav-left md-whiteframe-z2" 
               md-component-id="left" 
-              md-is-locked-open="$mdMedia('gt-xs')">
+              md-is-locked-open="$mdMedia('gt-xs')"
+              style="height: auto"
+  >
     <md-toolbar class="">
       <span flex></span>
       <div layout="column" class="md-toolbar-tools-bottom inset">
@@ -52,6 +57,13 @@
               GO
             </md-button>
           </div>
+        </md-item-content>
+      </md-item>
+      <md-item style="padding: 1rem">
+        <md-item-content>
+          <md-checkbox ng-model="tileCtrl.isDiagonal" aria-label="Checkbox 1">
+            Diagonal Path
+          </md-checkbox>
         </md-item-content>
       </md-item>
     </md-list>

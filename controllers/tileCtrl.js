@@ -30,6 +30,7 @@ icvApp.controller('TileCtrl',
           console.log(this.tiles);
           this.tiles[0].isStart = true;
           this.tiles[143].isEnd = true;
+          this.isDiagonal = true;
         });
       }
 
@@ -81,7 +82,7 @@ icvApp.controller('TileCtrl',
         let mappedWalls = this.mapWallsToBinaryGraph(this.chunkedTileArr);
 
         // initialize new graph
-        this.graph = new Graph(mappedWalls);
+        this.graph = new Graph(mappedWalls, { diagonal: this.isDiagonal });
       }
 
       this.getPathResultNodes = () => {
