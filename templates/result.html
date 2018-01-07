@@ -1,0 +1,37 @@
+<section id="result-section"
+         ng-controller="ResultCtrl as resultCtrl"
+         >
+ 
+    <div class="result-container">
+        <md-toolbar layout="row">
+            <div class="md-toolbar-tools">
+              <span>Pathfinding Result</span>
+            </div>
+        </md-toolbar>
+
+       <md-content>
+          <md-list>
+            <md-list-item>
+              <p class="data">
+                <em>Total Steps</em>: {{ resultCtrl.stats.totalSteps }}
+              </p>
+            </md-list-item>
+            <md-list-item>
+              <p class="data">
+                <em>Computation Time</em>: {{ resultCtrl.stats.performanceTime }} s
+              </p>
+            </md-list-item>
+          </md-list>
+          
+          <a href="#" class="start-over-btn"
+             ui-sref="main">
+            <div class="green-edge"></div>
+            <div class="circle">
+              <div class="checkmark"></div>
+            </div>
+            <span>Start Over</span>
+          </a>
+       </md-content>
+    </div>
+
+</section>

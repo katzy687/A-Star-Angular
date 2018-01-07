@@ -1,0 +1,88 @@
+#result-section {
+  height: 100%;
+  background: url(https://i.stack.imgur.com/enNzN.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-container {
+  width: 50%;
+  min-width: 430px;
+}
+
+
+a.start-over-btn {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 35%;
+  margin: 10px auto;
+  padding: 10px;
+  background: grey;
+  text-align: center;
+  position: relative;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.5s;
+  
+  
+}
+
+.start-over-btn span {
+  color: white;
+}
+
+.start-over-btn:hover .circle {
+  background: red;
+}
+
+.start-over-btn:hover {
+  background: black;
+}
+
+.green-edge {
+  background: green;
+  width: 5%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.circle {
+  background: green;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 0.6em;
+  transition: background 0.5s;
+}
+
+
+/* Checkmark */
+.checkmark {
+  display: inline-block;
+  position: absolute;
+  top: 25%;
+  left: 35%;
+}
+
+.checkmark:after {
+  /*Add another block-level blank space*/
+  content: '';
+  display: block;
+
+  /*Make it a small rectangle so the border will create an L-shape*/
+  width: 3px;
+  height: 6px;
+
+  /*Add a white border on the bottom and left, creating that 'L' */
+  border: solid white;
+  border-width: 0 2px 2px 0;
+
+  /*Rotate the L 45 degrees to turn it into a checkmark*/
+  transform: rotate(45deg);
+}

@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+}
+
+
+#main-section {
+  height: 100%;
+  background: url(http://is3.mzstatic.com/image/thumb/Purple4/v4/8c/56/39/8c563967-518c-d7a5-7532-852b4163177b/source/1200x630bb.jpg);
+}
+
+.md-sidenav-left {
+  height: 50vh;
+  width: 40vh;
+}
+
+.color-forms-container {
+  /* height: 50vh; */
+  width: 40vh;
+  overflow: hidden;
+}
+
+.reset-colors-btn {
+  background: linear-gradient(red, yellow);
+}
+
+.btn-aligner {
+  display: flex;
+  justify-content: center;  
+}
+
+.md-input input[name="path"] {
+  margin-bottom: 0;
+}
+
+#tiles {
+  /* background: lightblue; */
+  height: 66vh;
+  width: 66vh;
+  /* margin-left: 5%; */
+  color: white;
+  opacity: 0.9;
+}
+
+.grid-tile {
+  /* background: rgb(72, 187, 219); */
+  cursor: pointer;
+}
+
+.grid-tile figure {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+.selected {
+  font-size: 0.8em;
+  margin: 0px 4px 4px 0px;
+  color: white;
+}
+
+.start-pos {
+  /* background: darkgreen; */
+}
+
+.end-pos {
+  /* background: darkred;*/
+}
+
+.wall {
+  background: rgb(146, 84, 8);
+}
+
+.path {
+  /* background: fuchsia; */
+}

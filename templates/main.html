@@ -1,0 +1,126 @@
+<section id="main-section" 
+         layout="row" 
+         layout-align="space-between center" 
+         ng-controller="TileCtrl as tileCtrl">
+
+  <div class="instructions" style="position: absolute; top: 2%; left: 50%; transform: translateX(-50%)">
+    <p>1. Click Start/End to set path starting/ending points respectively </p>
+    <p>2. Click on grid with no buttons selected to set walls</p>
+    <p>3. Hit Go!</p>
+  </div>
+  
+  <!-- sidebar -->
+  <md-sidenav layout="column" 
+              class="md-sidenav-left md-whiteframe-z2" 
+              md-component-id="left" 
+              md-is-locked-open="$mdMedia('gt-xs')">
+    <md-toolbar class="">
+      <span flex></span>
+      <div layout="column" class="md-toolbar-tools-bottom inset">
+        <p>Control Buttons</p>
+      </div>
+    </md-toolbar>
+    <md-list>
+      <md-item>
+        <md-item-content layout="row" layout-align="center center">
+          <div class="inset">
+            <md-button style="background: darkgreen" class="md-primary md-raised" ng-style="{ 'filter' : tileCtrl.isStartEnabled ? 'brightness(65%)' : 'darkgreen' }"
+              ng-click="tileCtrl.toggleStartBtn()">
+              Start
+            </md-button>
+          </div>
+        </md-item-content>
+      </md-item>
+      <md-item>
+        <md-item-content layout="row" layout-align="center center">
+          <div class="inset">
+            <md-button style="background: darkred" 
+                       class="md-warn md-raised" 
+                       ng-style="{ 'filter' : tileCtrl.isEndEnabled ? 'brightness(65%)' : 'darkred' }"
+                       ng-click="tileCtrl.toggleEndBtn()">
+              End
+            </md-button>
+          </div>
+        </md-item-content>
+      </md-item>
+      <md-divider></md-divider>
+      <md-item>
+        <md-item-content layout="row" layout-align="center center">
+          <div class="inset">
+            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+            <md-button class="md-primary md-raised" ng-click="tileCtrl.go()">
+              GO
+            </md-button>
+          </div>
+        </md-item-content>
+      </md-item>
+    </md-list>
+  </md-sidenav>
+
+  <!-- main tiles -->
+  <div id="tiles">
+    {{ test }}
+    <md-content layout-padding>
+      <md-grid-list md-cols-gt-xs="12" md-row-height-gt-xs="1:1" md-gutter="4px">
+        <md-grid-tile class="grid-tile" 
+                      ng-repeat="tile in tileCtrl.tiles track by $index" 
+                      ng-click="tileCtrl.onTileClick(tile)"
+                      ng-style="{ 'background-color': tileCtrl.setTileColor(tile) }" 
+                      md-colspan-gt-xs="{{tile.colspan}}" 
+                      md-rowspan-gt-xs="{{tile.rowspan}}">
+
+          <p class="selected" ng-if="tile.isStart" style="text-align: center">
+            S
+          </p>
+          <p class="selected" ng-if="tile.isEnd" style="text-align: center">
+            E
+          </p>
+        </md-grid-tile>
+      </md-grid-list>
+    </md-content>
+  </div>
+
+
+  <!-- color input forms -->
+  <div class="color-forms-container">
+      <md-toolbar layout="row">
+          <div class="md-toolbar-tools">
+            <span>Custom Colors</span>
+          </div>
+      </md-toolbar>
+
+     <md-content>
+        <md-subheader class="md-no-sticky">
+          Pick a Color! (Hex or Word)
+        </md-subheader>
+      <md-input-container class="md-block">
+        <label>Default Tile Color</label>
+        <input name="default" 
+               ng-model="tileCtrl.customColors.default" 
+               />
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Wall Color</label>
+        <input name="Wall" 
+               ng-model="tileCtrl.customColors.wall" 
+               />
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Path Color</label>
+        <input name="Path" 
+               ng-model="tileCtrl.customColors.path" 
+               />
+      </md-input-container>
+      <div class="btn-aligner">
+        <md-button 
+          ng-click="tileCtrl.resetColors()"
+          class="reset-colors-btn"
+          >
+          Reset Colors
+        </md-button>
+      </div>
+     </md-content>
+  </div>
+
+
+</section>
