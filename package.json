@@ -1,0 +1,39 @@
+{
+  "name": "a-star-angular",
+  "version": "1.0.0",
+  "description": "pathfinding app",
+  "main": "server.js",
+  "dependencies": {
+    "angular-animate": "^1.6.6",
+    "angular": "^1.6.6",
+    "angular-aria": "^1.6.6",
+    "angular-material": "^1.1.5",
+    "angular-ui-router-resolve": "^0.0.2",
+    "compression": "^1.7.1",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katzy687/A-Star-Angular.git"
+  },
+  "keywords": [
+    "angular",
+    "A*",
+    "pathfinding",
+    "angular-material"
+  ],
+  "author": "Natti Katz",
+  "license": "ISC",
+  "engines": {
+    "node": "8.9.3"
+  },
+  "bugs": {
+    "url": "https://github.com/katzy687/A-Star-Angular/issues"
+  },
+  "homepage": "https://github.com/katzy687/A-Star-Angular#readme"
+}
